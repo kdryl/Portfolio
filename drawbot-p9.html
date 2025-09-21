@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Multivariable Control Drawing Robot - Precision 2-axis plotting system with PID control and real-time feedback">
+  <title>Drawing Robot | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>Multivariable Control Drawing Robot</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> 2023</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 10 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Group Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> MATLAB/Simulink, C++</span>
+      </div>
+      <p>Built a two-axis drawing robot that plots geometric shapes with sub-millimeter accuracy. Used PID control and encoder feedback to handle the mechanical challenges of belt-driven motion.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">&lt;1</div>
+        <div class="label">mm Repeatability</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">4-6</div>
+        <div class="label">Seconds Per Shape</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">2</div>
+        <div class="label">ms Sampling Period</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">&lt;4%</div>
+        <div class="label">Overshoot</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Design and build a robot that could draw shapes (squares, triangles, circles) accurately and repeatably. The main challenge was getting control theory to work on actual hardware - backlash in the belts and mechanical compliance made it much harder than the simulations suggested.</p>
+        
+        <div class="highlight-box">
+          <h3>Performance Requirements</h3>
+          <p>Achieve sub-millimeter positioning accuracy, complete shapes in under 10 seconds, maintain smooth motion through sharp corners, and demonstrate repeatability across multiple drawing cycles.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Technical Approach</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Hardware Platform</h4>
+            <p>Two-axis belt-driven gantry with DC motors, quadrature encoders, and Raspberry Pi Pico control</p>
+          </div>
+          <div class="tech-item">
+            <h4>Control Strategy</h4>
+            <p>PID controllers designed in MATLAB/Simulink with anti-windup and filtering for derivative noise</p>
+          </div>
+          <div class="tech-item">
+            <h4>Path Planning</h4>
+            <p>Python preprocessing to generate coordinate sequences from geometric shape definitions</p>
+          </div>
+          <div class="tech-item">
+            <h4>Real-time Execution</h4>
+            <p>2ms sampling period control loop with motor driver integration via L298N H-bridges</p>
+          </div>
+        </div>
+
+        <h3>Control System Design</h3>
+        <p>Started with simple bang-bang control for basic testing, then moved to PID control designed in MATLAB simulation. The system converted coordinates to motor angles based on belt ratios and kinematics. Key design choices included finding the right sampling frequency and implementing anti-windup to handle sharp corners smoothly.</p>
+
+        <h3>Key Engineering Challenges</h3>
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Backlash Compensation</h4>
+            <p>Belt and gearbox play caused rounded corners instead of sharp transitions. Solved by increasing coordinate point density near corners and adjusting shape generation algorithms.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Noise Management</h4>
+            <p>PID derivative term introduced control signal jitter. Implemented low-pass filtering to maintain stability while preserving response speed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Results & Performance</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Positioning Accuracy</h4>
+            <ul class="result-list">
+              <li><strong>Repeatability:</strong> Sub-millimeter across all shapes</li>
+              <li><strong>Overshoot:</strong> Less than 4% on step responses</li>
+              <li><strong>Settling Time:</strong> ~1 second target achievement</li>
+              <li><strong>Path Following:</strong> Smooth curves with minimal deviation</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Shape Completion</h4>
+            <ul class="result-list">
+              <li><strong>Squares:</strong> Excellent accuracy and sharp corners</li>
+              <li><strong>Circles:</strong> Good circular geometry after polar coordinate fix</li>
+              <li><strong>Triangles:</strong> Some residual distortion from backlash</li>
+              <li><strong>Execution Time:</strong> 4-6 seconds per complete shape</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Performance Validation</h3>
+          <p>The final system successfully demonstrated reliable geometric shape plotting with quantified sub-millimeter repeatability. Control system design methodology proved effective in bridging simulation and physical implementation.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Engineering Impact</h2>
+        <p>This project demonstrated the practical challenges of implementing theoretical control systems in physical hardware. The iterative design process—from simulation to hardware testing—highlighted the importance of robust control design that accounts for real-world non-idealities.</p>
+        
+        <p>My specific contributions included electrical hardware design, MATLAB/Simulink simulation development, and embedded C++ implementation for the Raspberry Pi Pico. The project reinforced understanding of multivariable control, sensor integration, and the critical importance of systematic testing and validation.</p>
+
+        <h3>Future Improvements</h3>
+        <p>Identified opportunities included implementing feedforward control for backlash compensation, adding automatic calibration routines, and exploring MIMO control approaches for better axis coupling management. The modular design provides a strong foundation for advanced control algorithm development.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">MATLAB/Simulink</span>
+        <span class="skill-tag">PID Control</span>
+        <span class="skill-tag">Embedded C++</span>
+        <span class="skill-tag">Raspberry Pi</span>
+        <span class="skill-tag">Motor Control</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Hardware Integration</span>
+        <span class="skill-tag">System Validation</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

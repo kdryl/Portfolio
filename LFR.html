@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Autonomous Line Following Robot - Advanced navigation system with proportional control and finite state machine logic">
+  <title>Line Following Robot | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>Autonomous Line Following Robot</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> Spring 2024</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 8 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Individual Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> Arduino C, Pololu 3Pi+</span>
+      </div>
+      <p>Fully autonomous robot navigating complex tracks using infrared sensors, weighted proportional control, and finite state machine logic for reliable performance across varying track geometries.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">100%</div>
+        <div class="label">Track Completion</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">5</div>
+        <div class="label">IR Sensors</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">±2</div>
+        <div class="label">µm Position Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">0</div>
+        <div class="label">Human Intervention</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Design and program an autonomous robot capable of following a black line across complex tracks including straight segments, curves, intersections, and end-of-line detection—all without human intervention after initial activation.</p>
+        
+        <div class="highlight-box">
+          <h3>Technical Requirements</h3>
+          <p>Navigate varying track geometries, handle intersections and decision points, maintain consistent speed and accuracy, implement dead reckoning for position estimation, and demonstrate repeatable autonomous performance.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Technical Implementation</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Sensor System</h4>
+            <p>5-sensor infrared array with analog threshold calibration for reliable line detection</p>
+          </div>
+          <div class="tech-item">
+            <h4>Control Algorithm</h4>
+            <p>Weighted proportional steering system replacing basic bang-bang control for smooth navigation</p>
+          </div>
+          <div class="tech-item">
+            <h4>State Management</h4>
+            <p>Finite state machine handling track segments, intersections, and behavioral transitions</p>
+          </div>
+          <div class="tech-item">
+            <h4>Position Estimation</h4>
+            <p>Encoder-based dead reckoning for distance tracking and decision-making support</p>
+          </div>
+        </div>
+
+        <h3>Control System Evolution</h3>
+        <p>Development progressed from simple bang-bang control to sophisticated weighted proportional steering. The final algorithm converts sensor readings into normalized position estimates, enabling smooth steering adjustments that significantly reduced oscillations compared to binary on/off control methods.</p>
+
+        <div class="image-placeholder">
+          <p>Control Algorithm Comparison</p>
+          <small>Bang-bang vs. Weighted Proportional Control - showing reduced oscillation and improved path accuracy</small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Advanced Features</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Finite State Machine</h4>
+            <p>Structured approach to track navigation including start box departure, straight line following, curve handling, intersection detection, and end-of-line recognition. Each state optimized for specific track conditions.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Sensor Integration</h4>
+            <p>Analog infrared sensor array with adaptive threshold calibration. Real-time sensor fusion provides robust line position estimation even under varying lighting conditions and track surface variations.</p>
+          </div>
+        </div>
+
+        <h3>Position Estimation System</h3>
+        <p>Implemented encoder-based dead reckoning to track robot position along the course. This enabled distance-based decision making beyond simple sensor inputs, supporting complex navigation behaviors like intersection counting and end-of-track detection.</p>
+      </section>
+
+      <section class="section">
+        <h2>Performance Results</h2>
+        
+        <div class="highlight-box">
+          <h3>Autonomous Operation Success</h3>
+          <p>Robot successfully completed 100% of track sections without human intervention, demonstrating reliable navigation across straight paths, curves, intersections, and complex geometry variations.</p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Navigation Performance</h4>
+            <ul class="result-list">
+              <li><strong>Track Completion:</strong> 100% autonomous success rate</li>
+              <li><strong>Path Accuracy:</strong> Consistent line following with minimal deviation</li>
+              <li><strong>Intersection Handling:</strong> Reliable detection and appropriate response</li>
+              <li><strong>Speed Consistency:</strong> Maintained optimal velocity throughout course</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Technical Achievements</h4>
+            <ul class="result-list">
+              <li><strong>Sensor Calibration:</strong> Robust performance across varying conditions</li>
+              <li><strong>Control Stability:</strong> Smooth motion with reduced oscillations</li>
+              <li><strong>State Transitions:</strong> Reliable behavioral switching between track sections</li>
+              <li><strong>Position Tracking:</strong> Accurate dead reckoning throughout course</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="video-container">
+          <div class="image-placeholder">
+            <p>Robot Navigation Video</p>
+            <small>Demonstration of autonomous track completion including intersections and complex geometry</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Engineering Impact</h2>
+        <p>This project demonstrated practical application of embedded systems design, sensor integration, and autonomous control algorithms. The progression from basic to advanced control methods illustrated the importance of iterative development and systematic testing in robotics applications.</p>
+        
+        <p>Key technical contributions included developing robust sensor calibration procedures, implementing weighted control algorithms for improved performance, and designing modular state machine architecture that could adapt to different track configurations without reprogramming.</p>
+
+        <h3>Real-World Applications</h3>
+        <p>The techniques developed—autonomous navigation, sensor fusion, and adaptive control—directly apply to larger robotics systems including warehouse automation, agricultural robots, and autonomous vehicles. The project reinforced the importance of reliable sensor processing and robust control design under varying environmental conditions.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">Embedded C</span>
+        <span class="skill-tag">Arduino</span>
+        <span class="skill-tag">Sensor Integration</span>
+        <span class="skill-tag">Control Systems</span>
+        <span class="skill-tag">State Machines</span>
+        <span class="skill-tag">Dead Reckoning</span>
+        <span class="skill-tag">Autonomous Systems</span>
+        <span class="skill-tag">Hardware Debugging</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

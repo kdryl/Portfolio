@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caesar Cipher Cryptography Tool - Python implementation with encryption, decryption, and automated analysis">
+  <title>Caesar Cipher Tool | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>Caesar Cipher Cryptography Tool</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> 2019</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 4 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Individual Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> Python</span>
+      </div>
+      <p>Built a Python command-line tool for Caesar cipher encryption and decryption. Includes frequency analysis, automated brute-force attacks, and dictionary validation for educational cryptography work.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">26</div>
+        <div class="label">Shift Combinations</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">100%</div>
+        <div class="label">ASCII Compatibility</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">O(1)</div>
+        <div class="label">Dictionary Lookup</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">±0</div>
+        <div class="label">Character Accuracy</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Build a complete cryptography tool that could encrypt and decrypt Caesar ciphers, handle various input methods, do statistical analysis, and demonstrate automated cryptanalysis techniques. This was my first substantial programming project.</p>
+        
+        <div class="highlight-box">
+          <h3>Requirements</h3>
+          <p>Support encryption/decryption with user-defined shifts, analyze character frequencies, handle keyboard and file input, implement brute-force decryption with dictionary validation, and include robust error handling.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Implementation</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Core Algorithm</h4>
+            <p>ASCII manipulation using ord() and chr() with modular arithmetic for character shifting</p>
+          </div>
+          <div class="tech-item">
+            <h4>Frequency Analysis</h4>
+            <p>Character frequency counting using collections.Counter for cryptanalysis support</p>
+          </div>
+          <div class="tech-item">
+            <h4>Dictionary Validation</h4>
+            <p>Set operations for fast word matching during automated decryption attempts</p>
+          </div>
+          <div class="tech-item">
+            <h4>File Processing</h4>
+            <p>Multi-line input handling with sys.stdin.readlines() and error management</p>
+          </div>
+        </div>
+
+        <h3>Encryption Function</h3>
+        <p>The core encryption processes each character individually, using modular arithmetic to shift letters within the alphabet while keeping non-alphabetic characters unchanged. This ensures compatibility with mixed text while maintaining classic Caesar cipher behavior.</p>
+
+        <div class="image-placeholder">
+          <p>Caesar Cipher Implementation</p>
+          <small>
+            def encrypt_message(message, shift):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;coded = ''<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;for letter in message:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if ord(letter) < 65 or ord(letter) > 90:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coded += letter<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coded += chr((ord(letter) + shift - 65) % 26 + 65)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return coded
+          </small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Advanced Features</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Automated Cryptanalysis</h4>
+            <p>Brute-force attack that tests all 26 possible shifts and validates results against English word dictionaries using set operations for fast candidate evaluation.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Statistical Analysis</h4>
+            <p>Character frequency counting and pattern identification supporting manual cryptanalysis techniques and educational demonstration of cipher weaknesses.</p>
+          </div>
+        </div>
+
+        <h3>Dictionary-Based Validation</h3>
+        <p>The automated decryption tests each of the 26 possible shift values, comparing results against a dictionary of valid English words. Set operations provide O(1) lookup performance, enabling rapid evaluation and automatic identification of the correct shift.</p>
+
+        <h3>User Interface</h3>
+        <p>Interactive command-line interface with error handling loops for robust user experience. The system handles invalid inputs gracefully, provides clear feedback, and supports both single-use and repeated operations within the same session.</p>
+      </section>
+
+      <section class="section">
+        <h2>Programming Concepts</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Algorithm Design</h4>
+            <p>Modular arithmetic implementation with edge case handling for character boundaries</p>
+          </div>
+          <div class="tech-item">
+            <h4>Data Structures</h4>
+            <p>Efficient use of sets for dictionary operations and Counter objects for frequency analysis</p>
+          </div>
+          <div class="tech-item">
+            <h4>File I/O</h4>
+            <p>Input handling supporting both interactive and batch processing modes</p>
+          </div>
+          <div class="tech-item">
+            <h4>Error Management</h4>
+            <p>Exception handling with user-friendly error messages and recovery options</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What I Learned</h2>
+        <p>This was my first real programming project and introduced me to algorithm design, string manipulation, and basic cryptographic principles. The progression from simple character shifting to automated cryptanalysis showed me how mathematical concepts translate into working code.</p>
+        
+        <p>The project taught me the importance of systematic testing, user interaction design, and the relationship between theoretical algorithms and practical software development. It gave me early experience with modular programming and highlighted how choosing the right data structures affects performance.</p>
+
+        <h3>Cryptography Concepts</h3>
+        <p>Beyond programming skills, the project illustrated fundamental cryptographic concepts like cipher strength, frequency analysis, and the importance of key space in security systems. The automated attack capability demonstrated why simple substitution ciphers don't work for modern security applications.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Algorithm Design</span>
+        <span class="skill-tag">ASCII Manipulation</span>
+        <span class="skill-tag">File I/O</span>
+        <span class="skill-tag">Data Structures</span>
+        <span class="skill-tag">Error Handling</span>
+        <span class="skill-tag">Cryptography</span>
+        <span class="skill-tag">Command Line Interface</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

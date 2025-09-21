@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Electric Propulsion Motor Design - Electromagnetic analysis and optimization for luxury EV applications">
+  <title>Electric Propulsion Motor Design | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>Electric Propulsion Motor Design</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> May 2024</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 12 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Individual Assessment</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> MATLAB, FEMM, Excel</span>
+      </div>
+      <p>Designed and analyzed a high-efficiency AC induction motor for luxury EVs. The motor delivers 300 Nm peak torque across a wide speed range using field-oriented control.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">300</div>
+        <div class="label">Nm Peak Torque</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">65.2</div>
+        <div class="label">kW Power Output</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">1.5</div>
+        <div class="label">T Airgap Flux</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">4</div>
+        <div class="label">Pole Configuration</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Design a compact, high-efficiency motor for a luxury EV that needs both high starting torque for acceleration and efficiency at highway speeds. The motor had to fit within tight packaging constraints while delivering professional-grade performance.</p>
+        
+        <div class="highlight-box">
+          <h3>Design Goals</h3>
+          <p>Hit 300 Nm torque at 3,000 RPM with field-oriented control, maintain 90%+ efficiency across the operating range, and scale up to 18,000 RPM through field weakening. Validate everything with finite element analysis.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Design Approach</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Starting Point</h4>
+            <p>Used Excel-based design tools following standard AC machine design principles for initial sizing</p>
+          </div>
+          <div class="tech-item">
+            <h4>Materials</h4>
+            <p>Selected NO20 silicon steel laminations to minimize iron losses and get good magnetic properties</p>
+          </div>
+          <div class="tech-item">
+            <h4>Configuration</h4>
+            <p>Went with 4-pole design and 5 slots per pole per phase to reduce harmonics</p>
+          </div>
+          <div class="tech-item">
+            <h4>Validation</h4>
+            <p>Used FEMM finite element simulations to check the analytical predictions</p>
+          </div>
+        </div>
+
+        <h3>Design Process</h3>
+        <p>Started with established electromagnetic machine design principles, working from power and torque specs through magnetic circuit analysis and thermal considerations. Each design choice was checked with both calculations and finite element modeling.</p>
+
+        <div class="image-placeholder">
+          <p>Stator Cross-Section Design</p>
+          <small>CAD model showing tooth geometry, slot layout, and magnetic flux paths</small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Key Design Decisions</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Magnetic Circuit</h4>
+            <ul class="result-list">
+              <li><strong>4-pole design</strong> for better slot fill</li>
+              <li><strong>5 slots per pole per phase</strong> to minimize harmonics</li>
+              <li><strong>Optimized tooth tips</strong> to reduce airgap reluctance</li>
+              <li><strong>1.5 T airgap flux</strong> for maximum power density</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Winding Design</h4>
+            <ul class="result-list">
+              <li><strong>Double-layer distributed winding</strong></li>
+              <li><strong>25 turns per phase</strong> with 5 coils in series</li>
+              <li><strong>4 parallel paths</strong> for current handling</li>
+              <li><strong>SWG19 multi-strand wire</strong> for thermal management</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Manufacturing Reality</h3>
+        <p>The design had to work in the real world, so I included practical constraints like slot liners, insulation requirements, and winding access. Phase separation and end-winding geometry were optimized for both electrical performance and manufacturability.</p>
+      </section>
+
+      <section class="section">
+        <h2>Performance Results</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Electrical Parameters</h4>
+            <p>Magnetizing inductance: 3.46 mH, Leakage inductance: 0.173 mH, Phase resistance: 25 mΩ at 160°C</p>
+          </div>
+          <div class="tech-item">
+            <h4>Operating Range</h4>
+            <p>Peak torque: 300 Nm at 3,000 RPM, Corner speed: 7,500 RPM at 150 Nm, Max speed: 18,000 RPM</p>
+          </div>
+          <div class="tech-item">
+            <h4>Loss Analysis</h4>
+            <p>Iron loss calculations using NO20 material data with 1.5× build factor for manufacturing tolerances</p>
+          </div>
+          <div class="tech-item">
+            <h4>Control Modeling</h4>
+            <p>MATLAB/Simulink model showing performance under vector control strategies</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Validation Success</h3>
+          <p>FEMM simulations confirmed 1.5 T airgap flux density and 68 A peak magnetizing current. Magnetic energy calculations matched analytical models within 5% - close enough to validate the design approach.</p>
+        </div>
+
+        <div class="image-placeholder">
+          <p>FEMM Simulation Results</p>
+          <small>Finite element analysis showing flux density distribution and saturation regions</small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Control System Integration</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Field-Oriented Control</h4>
+            <p>Built a complete MATLAB/Simulink model implementing vector control. Demonstrated motor behavior under varying loads, field weakening operation, and transient response for EV drive cycles.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Thermal Design</h4>
+            <p>Sized conductors for 160°C operation with proper thermal derating. Phase resistance calculations included temperature effects and verified current density for continuous operation.</p>
+          </div>
+        </div>
+
+        <h3>Real-World Application</h3>
+        <p>The design methods and results translate directly to commercial EV motor development. The approach balances electromagnetic performance, thermal management, and manufacturing constraints in a way that scales to different power ratings and vehicle applications.</p>
+      </section>
+
+      <section class="section">
+        <h2>What I Learned</h2>
+        <p>This project taught me how electromagnetic machine design works from theory through practical implementation. The combination of analytical design methods with finite element validation gave me a solid framework for motor development in the EV industry.</p>
+        
+        <p>Key technical achievements included integrating analytical and FEA methods, implementing field-oriented control, and understanding the trade-offs between electromagnetic performance, thermal limits, and manufacturing reality in high-performance motor design.</p>
+
+        <h3>Industry Relevance</h3>
+        <p>Working with professional design tools (FEMM, MATLAB/Simulink) and understanding manufacturing considerations gives me practical preparation for roles in electric machine design and automotive electrification.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">MATLAB/Simulink</span>
+        <span class="skill-tag">FEMM</span>
+        <span class="skill-tag">Electromagnetic Design</span>
+        <span class="skill-tag">Motor Control</span>
+        <span class="skill-tag">FEA Analysis</span>
+        <span class="skill-tag">Excel Automation</span>
+        <span class="skill-tag">Vector Control</span>
+        <span class="skill-tag">Thermal Analysis</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

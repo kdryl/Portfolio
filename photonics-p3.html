@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="3D-Printed Precision Micro-Manipulator for photonic chip alignment - Sub-micron accuracy at fraction of commercial cost">
+  <title>Precision Micro-Manipulator | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>3D-Printed Precision Micro-Manipulator</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> 2024</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 12 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Group Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> MATLAB, 3D CAD</span>
+      </div>
+      <p>Built a 3D-printed positioning system for aligning photonic chips that achieves sub-micron precision at 1/10th the cost of commercial equipment. Includes thermal stability analysis and performance validation.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">~50</div>
+        <div class="label">nm Step Resolution</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">£75</div>
+        <div class="label">Build Cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">&lt;2</div>
+        <div class="label">µm Drift (24hr)</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">1/10</div>
+        <div class="label">Commercial Cost</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Commercial micro-manipulators for photonic chip work cost over £1,000, which puts high-precision positioning out of reach for teaching labs and small research groups. We wanted to see if we could build something with comparable performance using 3D printing and open-source hardware.</p>
+        
+        <div class="highlight-box">
+          <h3>Design Goals</h3>
+          <p>Get sub-micron positioning precision, maintain thermal stability over 24+ hours, integrate with microscope optics for real-time monitoring, and keep manufacturing cost under £100 using standard 3D printing.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Approach</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>OpenFlexure Delta Stage</h4>
+            <p>Flexure-based design eliminates backlash and friction - key for good repeatability</p>
+          </div>
+          <div class="tech-item">
+            <h4>Built-in Optics</h4>
+            <p>Integrated microscope support for real-time alignment monitoring and characterization</p>
+          </div>
+          <div class="tech-item">
+            <h4>MATLAB Analysis</h4>
+            <p>Custom image processing to track motion and validate precision measurements</p>
+          </div>
+          <div class="tech-item">
+            <h4>Thermal Management</h4>
+            <p>External PCB mounting to minimize thermal drift from motor heating</p>
+          </div>
+        </div>
+
+        <h3>Design Selection</h3>
+        <p>We evaluated several open-source designs before picking the Delta Stage. The Block Stage had similar resolution, but the Delta Stage's integrated microscope optics made characterization much easier and gave better access for photonic coupling experiments.</p>
+
+        <h3>Key Modifications</h3>
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Thermal Fix</h4>
+            <p>Moved control electronics outside the PLA frame to reduce thermal drift. Motor heating during operation was the biggest source of positioning error - external mounting cut this by over 80%.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Better Lighting</h4>
+            <p>Replaced the fragile dovetail LED clip with a flexible arm design. Much more reliable and gives adjustable illumination angles for better chip visibility during alignment.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Performance Testing</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Precision Results</h4>
+            <ul class="result-list">
+              <li><strong>X-axis steps:</strong> 51 nm (vs 58 nm theoretical)</li>
+              <li><strong>Y-axis steps:</strong> 58 nm (vs 58 nm theoretical)</li>
+              <li><strong>Z-axis steps:</strong> 35 nm (vs 58 nm theoretical)</li>
+              <li><strong>Repeatability:</strong> ±2 µm across multiple cycles</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Stability Testing</h4>
+            <ul class="result-list">
+              <li><strong>24hr drift (unpowered):</strong> &lt;2 µm total</li>
+              <li><strong>24hr drift (powered):</strong> 12-20 µm from thermal effects</li>
+              <li><strong>Thermal behavior:</strong> Y-axis more sensitive than X-axis</li>
+              <li><strong>Practical use:</strong> Good for multi-hour experiments</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Real Performance Test</h3>
+          <p>Achieved comparable coupling efficiency (-20 dBm) to the commercial NanoMax system (-18 dBm), with better long-term stability over 24-hour tests. Shows this approach actually works for real photonics applications.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Testing Methods</h2>
+        
+        <p>Developed testing protocols using USAF-1951 resolution targets and custom MATLAB image processing. Tracking calibration features let us measure step sizes and drift characteristics precisely across different time scales.</p>
+
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Motion Analysis</h4>
+            <p>MATLAB algorithms analyzing microscope images to measure positioning accuracy and repeatability</p>
+          </div>
+          <div class="tech-item">
+            <h4>Thermal Studies</h4>
+            <p>24-hour drift measurements under different thermal conditions to validate stability</p>
+          </div>
+          <div class="tech-item">
+            <h4>Coupling Tests</h4>
+            <p>Direct comparison with commercial systems using fiber-to-chip coupling efficiency</p>
+          </div>
+          <div class="tech-item">
+            <h4>Statistics</h4>
+            <p>Multiple measurement cycles to get confidence intervals and repeatability data</p>
+          </div>
+        </div>
+
+        <div class="video-container">
+          <div class="image-placeholder">
+            <p>Micro-Manipulator in Action</p>
+            <small>Demo of sub-micron positioning with real-time microscope feedback during photonic chip alignment</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Impact</h2>
+        <p>This project showed that open-source hardware can match expensive commercial equipment when properly designed and characterized. The dramatic cost reduction (£75 vs £1,000+) makes precision positioning accessible for education and budget-constrained research.</p>
+        
+        <p>My contributions included MATLAB development for motion analysis, experimental design for thermal characterization, and systematic validation of positioning performance. The project taught me how important thermal effects are in precision mechanical systems and how to develop strategies to deal with them.</p>
+
+        <h3>Broader Applications</h3>
+        <p>The techniques extend beyond photonics to any application needing low-cost precision positioning: microscopy, materials testing, biological sample work, and educational lab setups. The open-source approach lets the broader research community customize and improve the design.</p>
+
+        <h3>Future Improvements</h3>
+        <p>Identified upgrades include active thermal compensation, inverted viewing for better optical access, and higher-resolution motors for even better precision. The modular design supports continuous development and optimization.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">Image Processing</span>
+        <span class="skill-tag">3D Design</span>
+        <span class="skill-tag">Precision Mechanics</span>
+        <span class="skill-tag">Experimental Design</span>
+        <span class="skill-tag">Statistical Analysis</span>
+        <span class="skill-tag">Photonics</span>
+        <span class="skill-tag">System Characterization</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

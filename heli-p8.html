@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="3DOF Helicopter PID Control System - Systematic control design for elevation axis with performance optimization">
+  <title>Helicopter Control System | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>3DOF Helicopter PID Control System</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> 2022</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 6 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Individual Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> MATLAB/Simulink</span>
+      </div>
+      <p>Designed a PID controller for a lab helicopter model that had to meet strict performance requirements: rise time under 1 second, overshoot under 10%, and zero steady-state error.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">0.20</div>
+        <div class="label">s Rise Time</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">7%</div>
+        <div class="label">Overshoot</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">2.6</div>
+        <div class="label">s Settling Time</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">~0%</div>
+        <div class="label">Steady-State Error</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Design a PID controller for the elevation axis of a Quanser 3DOF helicopter that meets strict specs: rise time &lt;1s, overshoot &lt;10%, settling time ≈5s, and zero steady-state error. The challenge was translating control theory into parameters that actually work on the physical hardware.</p>
+        
+        <div class="highlight-box">
+          <h3>Performance Requirements</h3>
+          <p>Hit all performance specs simultaneously while keeping the system stable. Had to use systematic design methods with root locus analysis and validate everything empirically.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>System Identification</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Experimental Testing</h4>
+            <p>Step response tests to figure out system characteristics and build transfer function models</p>
+          </div>
+          <div class="tech-item">
+            <h4>Parameter Extraction</h4>
+            <p>Logarithmic decrement method for damping ratio, oscillation analysis for natural frequency</p>
+          </div>
+          <div class="tech-item">
+            <h4>Model Validation</h4>
+            <p>Compared first and second-order transfer functions against experimental data</p>
+          </div>
+          <div class="tech-item">
+            <h4>Design Foundation</h4>
+            <p>Used system parameters as the starting point for PID controller design</p>
+          </div>
+        </div>
+
+        <h3>System Characteristics</h3>
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Dynamic Properties</h4>
+            <ul class="result-list">
+              <li><strong>Damping ratio:</strong> ζ ≈ 0.065 (very underdamped)</li>
+              <li><strong>Natural frequency:</strong> ωₙ ≈ 0.9 rad/s</li>
+              <li><strong>System gain:</strong> k ≈ 10.18°</li>
+              <li><strong>Time constant:</strong> τ ≈ 1.23 s</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Transfer Function</h4>
+            <p>Second-order model with oscillatory behavior and low damping. The underdamped nature meant I had to be careful with controller design to avoid excessive overshoot while still meeting rise time requirements.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Controller Design</h2>
+        
+        <p>Used root locus design to systematically place closed-loop poles for the desired response. This approach translates performance requirements into pole placement constraints, then finds PID parameters to achieve those pole locations.</p>
+
+        <h3>Design Process</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>Requirement Translation</h4>
+            <p>Overshoot &lt;10% → damping ratio &gt;0.59; settling time &lt;5s → real part &lt;-0.8</p>
+          </div>
+          <div class="tech-item">
+            <h4>Pole Placement</h4>
+            <p>Root locus analysis to find controller gains for desired dominant pole locations</p>
+          </div>
+          <div class="tech-item">
+            <h4>PID Structure</h4>
+            <p>Zeros at s = -1, -2 with integrator pole for both transient and steady-state performance</p>
+          </div>
+          <div class="tech-item">
+            <h4>Fine Tuning</h4>
+            <p>Manual adjustment from root locus starting point to optimize performance trade-offs</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <h3>Final Parameters</h3>
+          <p>Proportional gain Kₚ ≈ 14.7, Integral gain Kᵢ ≈ 4.9, Derivative gain Kd ≈ 2.45. These values hit all performance specs while maintaining good stability margins.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Results</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>Performance Achievement</h4>
+            <ul class="result-list">
+              <li><strong>Rise time:</strong> 0.20 s (target: &lt;1 s) ✓</li>
+              <li><strong>Overshoot:</strong> 7% (target: &lt;10%) ✓</li>
+              <li><strong>Settling time:</strong> 2.6 s (target: ≈5 s) ✓</li>
+              <li><strong>Steady-state error:</strong> ~0% (target: 0%) ✓</li>
+            </ul>
+          </div>
+          
+          <div class="result-card">
+            <h4>Validation</h4>
+            <ul class="result-list">
+              <li><strong>Bode plots:</strong> Good gain and phase margins</li>
+              <li><strong>Root locus:</strong> Closed-loop poles where expected</li>
+              <li><strong>Robustness:</strong> Performance held up under parameter variations</li>
+              <li><strong>Hardware test:</strong> Worked on the actual helicopter</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="image-placeholder">
+          <p>PID Controller Response</p>
+          <small>Step response showing achieved performance meeting all design specifications</small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What I Learned</h2>
+        <p>This project taught me the systematic approach to control system design, from identifying the system through implementing the controller. Root locus provided a structured way to translate performance requirements into controller parameters, while empirical tuning dealt with the practical realities.</p>
+        
+        <p>Key insights included understanding trade-offs between different performance metrics, recognizing how important accurate system identification is, and getting hands-on experience with classical control design techniques that apply across many engineering applications.</p>
+
+        <h3>Control Fundamentals</h3>
+        <p>The project reinforced core concepts: proportional action for speed, integral action for accuracy, and derivative action for stability. Understanding how these individual contributions work together was essential for achieving the multi-objective performance requirements.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">MATLAB/Simulink</span>
+        <span class="skill-tag">PID Control</span>
+        <span class="skill-tag">Root Locus</span>
+        <span class="skill-tag">System Identification</span>
+        <span class="skill-tag">Bode Plots</span>
+        <span class="skill-tag">Control Theory</span>
+        <span class="skill-tag">Performance Analysis</span>
+        <span class="skill-tag">Hardware Validation</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

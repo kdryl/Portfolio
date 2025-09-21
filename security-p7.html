@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital Logic Security System - ROM-based sequential circuit design using TTL components and state machine logic">
+  <title>Digital Security System | Karolina Dryl</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-narrow">
+    <nav class="nav-back">
+      <a href="index.html">
+        <i class="bx bx-arrow-back" aria-hidden="true"></i>
+        Back to Portfolio
+      </a>
+    </nav>
+
+    <header class="project-header">
+      <h1>Digital Logic Security System</h1>
+      <div class="project-meta">
+        <span><i class="bx bx-calendar" aria-hidden="true"></i> 2019-20</span>
+        <span><i class="bx bx-time" aria-hidden="true"></i> 6 weeks</span>
+        <span><i class="bx bx-group" aria-hidden="true"></i> Individual Project</span>
+        <span><i class="bx bx-code-alt" aria-hidden="true"></i> Digital Logic, TTL</span>
+      </div>
+      <p>Built a digital security system using ROM, TTL gates, and flip-flops. The system recognizes input sequences, maintains state information, and provides lock/unlock responses with LED feedback.</p>
+    </header>
+
+    <div class="key-stats">
+      <div class="stat-card">
+        <div class="number">ROM</div>
+        <div class="label">Based Logic</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">TTL</div>
+        <div class="label">Gate Integration</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">FSM</div>
+        <div class="label">State Machine</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">LED</div>
+        <div class="label">Status Output</div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <h2>Project Challenge</h2>
+        <p>Design and build a digital security system using basic logic components - ROM, TTL gates, and flip-flops. The system had to recognize valid input sequences, keep track of its current state, and give appropriate lock/unlock responses with visual feedback.</p>
+        
+        <div class="highlight-box">
+          <h3>Learning Goals</h3>
+          <p>Understand sequential circuit design, implement state machine logic with hardware components, design truth tables and state diagrams, and integrate multiple digital logic elements into a working system.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Implementation</h2>
+        
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>ROM-Based Logic</h4>
+            <p>Pre-programmed ROM containing state transition logic and output definitions for the security sequence</p>
+          </div>
+          <div class="tech-item">
+            <h4>Sequential Design</h4>
+            <p>Flip-flop circuits maintaining current state information and enabling proper state transitions</p>
+          </div>
+          <div class="tech-item">
+            <h4>Input Processing</h4>
+            <p>TTL gate networks processing user inputs and interfacing with ROM address lines</p>
+          </div>
+          <div class="tech-item">
+            <h4>Output Display</h4>
+            <p>LED array providing visual feedback for system status and access granted/denied states</p>
+          </div>
+        </div>
+
+        <h3>Design Process</h3>
+        <p>Started by defining the required input sequences and corresponding system responses. Created state transition diagrams to map the logical flow from initial state through various input combinations to final lock/unlock decisions. Then developed truth tables to define ROM contents and output logic.</p>
+
+        <div class="image-placeholder">
+          <p>Digital Security System Schematic</p>
+          <small>Circuit diagram showing ROM, flip-flop, and TTL gate connections with input switches and LED indicators</small>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>System Architecture</h2>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <h4>State Machine Logic</h4>
+            <p>Sequential circuit implementing finite state machine behavior. ROM addresses corresponded to current state and input combinations, with ROM outputs driving next state logic and system responses.</p>
+          </div>
+          
+          <div class="result-card">
+            <h4>Hardware Integration</h4>
+            <p>Physical implementation required careful consideration of TTL timing characteristics, proper power distribution, and signal integrity across multiple logic families and components.</p>
+          </div>
+        </div>
+
+        <h3>Key Design Elements</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>State Encoding</h4>
+            <p>Binary encoding of system states using flip-flop outputs as state variables</p>
+          </div>
+          <div class="tech-item">
+            <h4>Combinational Logic</h4>
+            <p>TTL gates implementing input conditioning and output decoding functions</p>
+          </div>
+          <div class="tech-item">
+            <h4>Memory Interface</h4>
+            <p>ROM addressing scheme mapping state and input variables to next state and output data</p>
+          </div>
+          <div class="tech-item">
+            <h4>Timing Control</h4>
+            <p>Clock signal management ensuring proper sequential operation and state transitions</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Implementation Challenges</h2>
+        
+        <p>The project got disrupted by COVID-19 restrictions, requiring a shift from hands-on hardware implementation to theoretical design validation. This emphasized the importance of thorough design documentation and simulation-based verification methods.</p>
+
+        <div class="highlight-box">
+          <h3>Adaptation and Learning</h3>
+          <p>While physical testing was limited, the project successfully demonstrated understanding of digital logic principles, state machine design, and hardware integration concepts. Assessment moved to design documentation and theoretical analysis.</p>
+        </div>
+
+        <h3>Design Verification</h3>
+        <p>Without complete physical implementation, verification relied on truth table analysis, state diagram validation, and theoretical timing analysis. This reinforced the importance of design validation methods and systematic verification procedures in digital systems.</p>
+      </section>
+
+      <section class="section">
+        <h2>What I Learned</h2>
+        <p>This foundational project gave me essential understanding of digital logic design principles that proved valuable for later embedded systems and control projects. The state machine concepts applied directly to later robotics work, while the hardware integration experience informed PCB design and electronic system development.</p>
+        
+        <p>Key learning included systematic approach to sequential circuit design, understanding of memory-based logic implementation, and appreciation for the relationship between theoretical logic design and practical hardware constraints. The project emphasized the importance of thorough documentation and verification procedures in engineering practice.</p>
+
+        <h3>Foundation for Advanced Work</h3>
+        <p>The digital logic concepts from this project directly supported later work in embedded programming, where software state machines and hardware interfacing became central to robotics and control system implementation. Understanding TTL characteristics and timing considerations proved valuable for subsequent electronic design work.</p>
+      </section>
+
+      <div class="skills-tags">
+        <span class="skill-tag">Digital Logic</span>
+        <span class="skill-tag">State Machines</span>
+        <span class="skill-tag">ROM Programming</span>
+        <span class="skill-tag">TTL Circuits</span>
+        <span class="skill-tag">Sequential Design</span>
+        <span class="skill-tag">Truth Tables</span>
+        <span class="skill-tag">Hardware Integration</span>
+        <span class="skill-tag">Circuit Analysis</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
