@@ -6,114 +6,141 @@
   <meta name="description" content="Karolina Dryl - Mechanical & Electrical Engineer specializing in robotics, control systems, and embedded design">
   <title>Karolina Dryl - Engineering Portfolio</title>
 
-  <!-- Optimized font imports -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  
   <!-- External CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <div class="container">
-    <header class="hero">
-      <h1>Karolina Dryl</h1>
-      <p class="subtitle">Mechanical & Electrical Engineer</p>
-      <p class="bio">
-        I'm a design-focused engineer with a strong interest in innovation, sustainability, and automation. I enjoy bringing components and ideas together to create solutions that are both functional and thoughtfully designed. Aesthetics, usability, creativity, and impact all matter to me. I approach challenges with curiosity and a focus on balancing form and function.
+  <div class="split-container">
+    <!-- LEFT SECTION -->
+    <div class="split-left">
+      <div>
+        <h1 class="section-title">ABOUT ME</h1>
+        <hr class="soft-line">
+        <h3 class="name">KAROLINA DRYL</h3>
+        <hr class="soft-line-close">
+        <h2 class="title">Mechanical &amp; Electrical Engineer</h2>
+      </div>
 
-My experience includes projects in robotics, embedded systems, electric propulsion, and renewable energy. Customer-facing roles have strengthened my communication, leadership, and focus under pressure. I'm motivated by work that's practical, well-designed, and makes a real-world impact.
+      <p class="about-me desktop-bio">
+        I'm a design-focused engineer with a strong interest in innovation, sustainability, and automation.
+        I enjoy bringing components and ideas together to create solutions that are both functional and thoughtfully designed.
+        Aesthetics, usability, creativity, and impact all matter to me.
+        <br><br>
+        I approach challenges with curiosity and a focus on balancing form and function.
+        My experience includes projects in robotics, embedded systems, electric propulsion, and renewable energy.
+        Customer-facing roles have strengthened my communication, leadership, and focus under pressure.
+        I'm motivated by work that's practical, well-designed, and makes a real-world impact.
       </p>
-      
-      <nav class="social-links" aria-label="Social media and contact links">
-        <a href="https://www.linkedin.com/in/karolinadryl/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-          <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
-        </a>
-        <a href="cv.html" aria-label="View CV">
-          <i class="bx bxs-user-detail" aria-hidden="true"></i>
-        </a>
-        <a href="mailto:k.dryl99@outlook.com" aria-label="Send email">
-          <i class="bx bx-envelope" aria-hidden="true"></i>
-        </a>
-        <!-- <a href="https://github.com/karolinadryl" target="_blank" rel="noopener" aria-label="GitHub profile">
-          <i class="bx bxl-github" aria-hidden="true"></i>
-        </a> -->
-      </nav>
-    </header>
 
-    <main id="main-content">
-      <section>
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <p>My most significant engineering work demonstrating technical depth and practical problem-solving</p>
+      <p class="about-me mobile-bio">
+        I strive to create solutions where creativity, usability, and problem-solving come together to make a meaningful difference.
+      </p>
+
+      <footer class="footer">
+        <div class="media">
+          <a href="https://www.linkedin.com/in/karolinadryl/" target="_blank" aria-label="LinkedIn profile">
+            <i class="bx bxl-linkedin-square"></i>
+          </a>
+          <a href="cv.html" target="_blank" aria-label="CV page">
+            <i class="bx bxs-user-detail"></i>
+          </a>
+          <a href="mailto:k.dryl99@outlook.com" aria-label="Send email">
+            <i class="bx bx-envelope"></i>
+          </a>
+          <a href="https://github.com/karolinadryl" target="_blank" aria-label="GitHub profile">
+            <i class="bx bxl-github"></i>
+          </a>
         </div>
+      </footer>
+    </div>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Electric Vehicle Motor Design</h3>
-            <p class="tech-stack">MATLAB • FEMM • Electromagnetic Analysis • 2024</p>
-            <p>
-              Electromagnetic design and analysis of a high-efficiency AC induction motor for luxury EVs. 
-              Achieved 300 Nm peak torque with sub-millimeter precision using field-oriented control 
-              and advanced simulation techniques.
-            </p>
-            <a href="EPD_motor_design.html" class="btn">View Project</a>
-          </article>
+    <!-- RIGHT SECTION -->
+    <div class="split-right">
+      <!-- HEADER LOGO -->
+      <header>
+        <div class="logo">PROJECTS.</div>
+      </header>
 
-          <article class="project-card">
-            <h3>Multivariable Drawing Robot</h3>
-            <p class="tech-stack">Raspberry Pi • PID Control • Kinematics • 2023</p>
-            <p>
-              Two-axis belt-driven robot achieving sub-millimeter repeatability for geometric shape plotting. 
-              Implemented MATLAB/Simulink control design with anti-windup strategies and real-time 
-              position feedback systems.
-            </p>
-            <a href="drawbot-p9.html" class="btn">View Project</a>
-          </article>
+      <!-- SLIDES -->
+      <section class="banner">
+        <div class="slider">
 
-          <article class="project-card">
-            <h3>Autonomous Line-Following Robot</h3>
-            <p class="tech-stack">Arduino C • Embedded Systems • Sensor Fusion • 2024</p>
-            <p>
-              Fully autonomous robot navigating complex tracks using infrared sensors, weighted proportional 
-              control, and finite state machine logic. Achieved reliable performance across intersections, 
-              curves, and varying track geometries.
-            </p>
-            <a href="LFR.html" class="btn">View Project</a>
-          </article>
+          <div class="slide slide-image-robot active">
+            <div class="left-info">
+              <div class="blur">
+                <h3 class="project-title">Line-Following Robot</h3>
+                <p>An autonomous robot using analog infrared sensors and proportional control to navigate mazes with FSM logic. Built using Pololu 3Pi+ and embedded C.</p>
+                <a href="LFR.html" class="btn">Find out more</a>
+              </div>
+            </div>
+            <div class="navigation">
+              <span class="prev-btn"><i class="bx bx-chevron-left"></i></span>
+              <span class="next-btn"><i class="bx bx-chevron-right"></i></span>
+            </div>
+          </div>
 
-          <article class="project-card">
-            <h3>Precision Micro-Manipulator</h3>
-            <p class="tech-stack">3D Printing • MATLAB • Photonics • 2024</p>
-            <p>
-              3D-printed flexure-based positioning system for photonic chip alignment. Achieved sub-micron 
-              precision at 1/10th the cost of commercial systems, with comprehensive thermal stability 
-              analysis and performance validation.
-            </p>
-            <a href="photonics-p3.html" class="btn">View Project</a>
-          </article>
+          <div class="slide slide-image-motor">
+            <div class="left-info">
+              <div class="blur">
+                <h3 class="project-title">EV Motor Design</h3>
+                <p>Electromagnetic design and simulation of an EV stator using FEMM and MATLAB. Optimized for torque, efficiency, and thermal performance.</p>
+                <a href="EPD_motor_design.html" class="btn">Find out more</a>
+              </div>
+            </div>
+            <div class="navigation">
+              <span class="prev-btn"><i class="bx bx-chevron-left"></i></span>
+              <span class="next-btn"><i class="bx bx-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <div class="slide slide-image-photonics">
+            <div class="left-info">
+              <div class="blur">
+                <h3 class="project-title">Photonic Chip Alignment System</h3>
+                <p>3D-printed microscope stage for sub-micron precision chip alignment. Combines flexure joints and thermal stability verification using MATLAB.</p>
+                <a href="photonics-p3.html" class="btn">Find out more</a>
+              </div>
+            </div>
+            <div class="navigation">
+              <span class="prev-btn"><i class="bx bx-chevron-left"></i></span>
+              <span class="next-btn"><i class="bx bx-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <div class="slide slide-image-drawingbot">
+            <div class="left-info">
+              <div class="blur">
+                <h3 class="project-title">Drawing Robot</h3>
+                <p>A two-axis robot arm controlled by a Raspberry Pi Pico. Draws shapes using path planning and stepper control.</p>
+                <a href="drawbot-p9.html" class="btn">Find out more</a>
+              </div>
+            </div>
+            <div class="navigation">
+              <span class="prev-btn"><i class="bx bx-chevron-left"></i></span>
+              <span class="next-btn"><i class="bx bx-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <div class="slide slide-image-other">
+            <div class="left-info">
+              <div class="blur">
+                <a href="all-projects.html" class="btn">MORE PROJECTS</a>
+              </div>
+            </div>
+            <div class="navigation">
+              <span class="prev-btn"><i class="bx bx-chevron-left"></i></span>
+              <span class="next-btn"><i class="bx bx-chevron-right"></i></span>
+            </div>
+          </div>
+
         </div>
       </section>
-
-      <section class="additional-projects">
-        <h3>Additional Engineering Work</h3>
-        <ul>
-          <li>
-            <a href="heli-p8.html">3DOF Helicopter PID Control</a>
-            <p>Simulink-based control system design with systematic tuning methodology</p>
-          </li>
-          <li>
-            <a href="cipher-p5.html">Caesar Cipher Analysis Tool</a>
-            <p>Python cryptography tool with frequency analysis and brute-force decryption</p>
-          </li>
-          <li>
-            <a href="security-p7.html">Digital Logic Security System</a>
-            <p>ROM-based sequential logic design using TTL components and state machines</p>
-          </li>
-        </ul>
-      </section>
-    </main>
+    </div>
   </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
